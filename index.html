@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HortaUrbana Comunitária - Conectando Jardineiros e Espaços</title>
+
+    <!-- CSS do Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Ícones do Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS Customizado -->
+    <style>
+        :root {
+            --cor-verde-principal: #3a7d44; /* Verde escuro, orgânico */
+            --cor-verde-claro: #e8f5e9; /* Fundo suave */
+            --cor-marrom-terra: #8d6e63; /* Destaques, títulos */
+            --cor-texto: #424242;
+            --cor-offwhite: #fafafa;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cor-offwhite);
+            color: var(--cor-texto);
+        }
+
+        .navbar {
+            box-shadow: 0 2px 8px rgba(0,0,0,.07);
+            background-color: #ffffff !important;
+        }
+        .navbar-brand {
+            color: var(--cor-verde-principal) !important;
+            font-weight: 700;
+        }
+        .nav-link { font-weight: 600; }
+        .nav-link:hover { color: var(--cor-verde-principal) !important; }
+
+        .btn-outline-primary {
+            color: var(--cor-verde-principal);
+            border-color: var(--cor-verde-principal);
+            font-weight: 600;
+        }
+        .btn-outline-primary:hover {
+            background-color: var(--cor-verde-principal);
+            color: white;
+        }
+        .btn-primary {
+            background-color: var(--cor-verde-principal);
+            border-color: var(--cor-verde-principal);
+            font-weight: 600;
+            padding: 10px 24px;
+        }
+        .btn-primary:hover {
+            background-color: #2e6436;
+            border-color: #2e6436;
+        }
+
+        .hero-section {
+            background-color: var(--cor-verde-claro);
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero-section h1 {
+            color: var(--cor-marrom-terra);
+            font-weight: 700;
+        }
+
+        .section-title {
+            color: var(--cor-marrom-terra);
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .card-espaco {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-espaco:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,.12);
+        }
+        .card-espaco .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-espaco .badge {
+            font-size: 0.8rem;
+        }
+
+        .como-funciona-step {
+            text-align: center;
+        }
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--cor-verde-claro);
+            color: var(--cor-verde-principal);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: var(--cor-verde-principal);
+            color: white;
+            padding: 40px 0 20px 0;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho - Simula a navegação principal da aplicação -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#"><i class="bi bi-leaves"></i> GardenClub</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <!-- Links para as telas principais -->
+                        <li class="nav-item"><a class="nav-link" href="#">Mapa de Espaços</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Fórum</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Trocas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Minhas Parcerias</a></li>
+                    </ul>
+                    <div class="d-flex">
+                        <a href="#" class="btn btn-outline-primary me-2">Login</a>
+                        <a href="#" class="btn btn-primary">Cadastre-se</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding-top: 70px;">
+
+        <!-- Seção Hero - Apresentação da proposta de valor -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="display-4">Não tem onde plantar? Encontre um espaço. Tem um espaço sobrando? Crie uma horta.</h1>
+                <p class="lead my-4">Conectamos apaixonados por jardinagem a quintais e terraços ociosos na sua cidade.</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <a href="#" class="btn btn-primary btn-lg px-4 gap-3">Procurar um Espaço</a>
+                    <a href="#" class="btn btn-outline-secondary btn-lg px-4">Oferecer meu Espaço</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção "Como Funciona" -->
+        <section class="container py-5">
+            <h2 class="section-title">COMO FUNCIONA</h2>
+            <div class="row">
+                <div class="col-md-4 como-funciona-step">
+                    <div class="step-icon"><i class="bi bi-person-plus-fill"></i></div>
+                    <h5>1. Cadastre-se</h5>
+                    <p>Crie seu perfil como "Dono de Espaço" ou "Jardineiro" em poucos minutos.</p>
+                </div>
+                <div class="col-md-4 como-funciona-step">
+                    <div class="step-icon"><i class="bi bi-link-45deg"></i></div>
+                    <h5>2. Conecte-se</h5>
+                    <p>Explore o mapa, encontre o parceiro ideal e envie uma solicitação de parceria.</p>
+                </div>
+                <div class="col-md-4 como-funciona-step">
+                    <div class="step-icon"><i class="bi bi-flower1"></i></div>
+                    <h5>3. Cultive!</h5>
+                    <p>Combinem os detalhes, coloquem a mão na terra e comecem a colher juntos.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Seção "Espaços Disponíveis" - Mockup da funcionalidade de mapa/lista -->
+        <section class="py-5" style="background-color: var(--cor-verde-claro);">
+            <div class="container">
+                <h2 class="section-title">ESPAÇOS RECENTES PERTO DE VOCÊ</h2>
+                <div class="row g-4">
+                    <!-- Card de Espaço 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card card-espaco">
+                            <img src="https://placehold.co/600x400/a2cf6e/ffffff?text=Quintal+Ensolarado" class="card-img-top" alt="Quintal ensolarado">
+                            <div class="card-body">
+                                <h5 class="card-title">Quintal ensolarado no Bairro Alto</h5>
+                                <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> São Paulo, SP</p>
+                                <p class="card-text">Dona Maria oferece 10m² com sol o dia todo para cultivo de hortaliças.</p>
+                                <span class="badge bg-success">Aceita iniciantes</span>
+                                <a href="#" class="btn btn-primary mt-3 w-100">Ver detalhes do espaço</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card de Espaço 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card card-espaco">
+                            <img src="https://placehold.co/600x400/c5e1a5/ffffff?text=Terraço+Amplo" class="card-img-top" alt="Terraço amplo">
+                            <div class="card-body">
+                                <h5 class="card-title">Terraço amplo com ponto de água</h5>
+                                <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Rio de Janeiro, RJ</p>
+                                <p class="card-text">Espaço perfeito para cultivo em vasos. Já tenho algumas ferramentas para compartilhar.</p>
+                                <span class="badge bg-info">Ferramentas disponíveis</span>
+                                <a href="#" class="btn btn-primary mt-3 w-100">Ver detalhes do espaço</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card de Espaço 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card card-espaco">
+                            <img src="https://placehold.co/600x400/81c784/ffffff?text=Canteiro+Pronto" class="card-img-top" alt="Canteiro pronto para uso">
+                            <div class="card-body">
+                                <h5 class="card-title">Canteiro pronto nos fundos de casa</h5>
+                                <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Belo Horizonte, MG</p>
+                                <p class="card-text">Tenho um canteiro de 5m² sem uso e adoraria ver alguém plantando temperos aqui.</p>
+                                <span class="badge bg-warning text-dark">Ideal para temperos</span>
+                                <a href="#" class="btn btn-primary mt-3 w-100">Ver detalhes do espaço</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="text-center mt-4">
+                    <a href="#" class="btn btn-outline-primary btn-lg">Ver todos os espaços no mapa</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container text-center">
+            <p class="mb-2">&copy; 2025 GardenClub.</p>
+            <p>Conectando sementes, pessoas e colheitas.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
